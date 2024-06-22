@@ -1,1 +1,620 @@
-const _0x30d36a=_0x5798,_0x1b1fe6=_0x1a33;(function(_0x571fc4,_0x374261){const _0x3bea59=_0x1a33,_0x2193fa=_0x5798,_0x20c1d8=_0x571fc4();while(!![]){try{const _0x4d0881=parseInt(_0x2193fa(0x2bd))/0x1*(-parseInt(_0x2193fa(0x1b8))/0x2)+parseInt(_0x2193fa(0x25e))/0x3*(-parseInt(_0x3bea59(0x245,'Yboj'))/0x4)+parseInt(_0x2193fa(0x293))/0x5+-parseInt(_0x3bea59(0x274,'uId!'))/0x6+-parseInt(_0x3bea59(0x1e9,'sbg7'))/0x7+-parseInt(_0x3bea59(0x280,'JqNM'))/0x8+-parseInt(_0x2193fa(0x2d6))/0x9*(-parseInt(_0x3bea59(0x2df,'y3[U'))/0xa);if(_0x4d0881===_0x374261)break;else _0x20c1d8['push'](_0x20c1d8['shift']());}catch(_0x226537){_0x20c1d8['push'](_0x20c1d8['shift']());}}}(_0x296c,0x68d13),require(_0x1b1fe6(0x1c8,'MT0q')));function _0x5798(_0x22969d,_0x134298){const _0x296c43=_0x296c();return _0x5798=function(_0x579864,_0x5269e1){_0x579864=_0x579864-0x1ae;let _0x4842b7=_0x296c43[_0x579864];return _0x4842b7;},_0x5798(_0x22969d,_0x134298);}const {default:makeWASocket,useMultiFileAuthState,DisconnectReason,fetchLatestBaileysVersion,generateForwardMessageContent,prepareWAMessageMedia,generateWAMessageFromContent,generateMessageID,downloadContentFromMessage,makeInMemoryStore,jidDecode,getAggregateVotesInPollMessage,proto}=require('@whiskeysockets/baileys'),fs=require('fs'),pino=require(_0x30d36a(0x222)),chalk=require('chalk'),path=require(_0x30d36a(0x258)),axios=require(_0x30d36a(0x2f2)),FileType=require(_0x1b1fe6(0x2e1,'q]&]')),readline=require(_0x1b1fe6(0x2dd,'2e[7')),yargs=require('yargs/yargs'),CFonts=require(_0x30d36a(0x2d8)),{HttpsProxyAgent}=require(_0x30d36a(0x240)),agent=new HttpsProxyAgent(_0x1b1fe6(0x1b9,'9ma%')),_=require(_0x30d36a(0x268)),{Boom}=require('@hapi/boom'),PhoneNumber=require(_0x30d36a(0x273)),{imageToWebp,imageToWebp3,videoToWebp,writeExifImg,writeExifImgAV,writeExifVid}=require('./lib/exif'),{smsg,isUrl,generateMessageTag,getBuffer,getSizeMedia,fetchJson,await,sleep}=require(_0x30d36a(0x1b0)),question=_0x5f607a=>{const _0x17f623=_0x30d36a,_0x305bbd=_0x1b1fe6,_0x599de9=readline[_0x305bbd(0x1c4,'TxX8')]({'input':process[_0x17f623(0x2e3)],'output':process['stdout']});return new Promise(_0x34703b=>{_0x599de9['question'](_0x5f607a,_0x34703b);});};var low;try{low=require(_0x1b1fe6(0x22a,'hyx^'));}catch(_0x5822a3){low=require(_0x1b1fe6(0x1fd,'dI@I'));}const {Low,JSONFile}=low,mongoDB=require(_0x1b1fe6(0x1d1,'fI!X')),store=makeInMemoryStore({'logger':pino()[_0x1b1fe6(0x26b,')b&t')]({'level':_0x30d36a(0x1bf),'stream':_0x30d36a(0x207)})});function _0x296c(){const _0x357359=['BruQWPtdLmopW5i/W5Lza8oWW4O','WRLUcYO','sendImageAsSticker','W5XuqmkvWO42fNy','fromBuffer','sendTextWithMentions','unlink','W4BdP8ksaKysDgzSW77dVW','W5m3W5/cIW','amozW74','FmkgWPeYW6dcKmk2','iSk0Cmk4AmoOWRddI8o5WRlcJCkkW59JWPqN','gNtdR8o+W7Ppzmk5DmoHWPGp','WQbciCoMW6eIsmkphhZdTKyFWQCrFa','WPLvWO3cVmoFxmkLW7JdI8oIWRFcH3pcNGO','W6mDFmk6FW','Connection\x20Replaced,\x20Another\x20New\x20Session\x20Opened,\x20Please\x20Restart\x20Bot','sKhcI8oKW44','WOldP8oq','1761055QaPQnZ','join','WRPiWPRcVSkwFG','international','WOVcGeC','slice','4952286IbIExF','Unknown\x20DisconnectReason:\x20','text','©\x20GoodBye\x20Message','aSojWQGRcaHcW7LkcSk0','application/pdf','read','W4e/WR47W4pcSCksqW','uLtcNG','WPxcQvmSEW','\x20kamu\x20akan\x20diblokir.\x20Silahkan\x20hubungi\x20Owner\x20membuka\x20blok\x20!','a8kVW67dPmkBWRqYWPyptSoCaq','eCkIy8kJFmo/WPpdImo4WQK','4223905vyWvZn','xCkgWQK','W7ihESkJ','fhRdVCo/WOGA','data','exit','timedOut','WPyxW7aYW5WAmYZdUmogW7jrWQmDkKvPWPxWTzAs8jAxOFc5L6VWUBwd8lA3K/gePlZXG4wsWPGohpcyTBtWKOE48kkxPFgpPOVdMpc3L4ZWLks58jwhNSofC8k98k23KVcLP4NXH7EF8l20QVcqT7ZWRAse8jM1IVggTRRWVOsuWOXzq8kaWPTDW40EW6VWUQwj8l+vQVcwL43WMiEs8kQeMpgnLylWSkAj8loeQmo6','W7njW7q4W4DuWQRcNa','W4jsWQnM','e2VdPSo/W5nlySk5ESonWO4zW7JcUSoqW7a','W6CqE8kQv8ofzmkmWRFcN3m','author','statusCode','mimetype','bmouWRqWhW','mh9Vbmowgmk3','includes','string','t8kiW6KShXmz','WQVcNaddNCobemk5bGHBiCoz','EYRcISoAW7e','W77dPLNdNeOZuG','6IMCOfd','W7D2WPZcSmkrW5yebCotu8o9WPn4g35EW5FdNsJdUYhdH8kmW7ddU8oJySkhqmkhW5pcGJfNW6pdKI8OWO3dUr/dOZ8FWQ/cJSkaC8kpC204WP/dMKBdR3SwCmk8W6bEW6acWPxcLLVdKdVcUf7cNaK8WQD/xSoZtYjBWQlcRCktWP3dOmoWamo5W7RdMmknrSo1nCkJW53dOdpcVSoCWOniW7boWOBcKmoyWRxcGmoNWR/cVmk4WP8/pKqqc8k1WO3cLSoexSolWOxcOCk2W64oWQ/dLSk0C0FdUmkDW6pdLvpdLMtdTbdcVmoHWPWws8oBu8ksx8kjjHNdUCoPdCkMn23dQ8kCoSkArmk9qSoiEmo8FCoTW7NdLCoLW4TcW7SXrSoBe8kwWQ0bWO7dUJdcJmojWQ0YWQtcK8oubmoNW485W4XmW6ClW6RdNweeWRO9W7OomXRcOZiQWQeMW49KW6bbW6ZcKmoYd8kLW4mSWQerWPZcKq','ext','ntNdQSo3lmkDWPzMduig','100','W5/dGb/dSmoubHtcTSoVW5NcItiuFCkEeG','action','contextInfo','concat','viewOnceMessage','replace','match','readFileSync','iSkWFCkLAq','BAE5','W7DcW6qNW5nxWQO','DYpcLCogW7pcGIO','log','WOdcKmks','WO56WOBcSCkXWOjzlSkFDCoA','ASkgWPeY','W7pdMrxdKmoJgmk+qZLlpmoBWRFcKCoAtmkmWRK6W5OyW4SxW6hdSYxdOmo2buJcLmku','jSkPzCkKCSoUWOtdQSoKWRpcMmkpW592','demote','BCkbWOO3W6dcLG','99693RDRPbA','sendMessage','cfonts','WQDtoSoMWRPZ','qSkQnWxdL8oGaN0D','WRGeiwuC','sv3cHSo5W5ZdPtby','feZdUCkJtMFcPSks','key','WPH6WQ/cQCkeya/cICkpAa','W6PSiSkG','W70cW49jBmoHW57cLa8','bold','stdin','W4iOWR85W6ZcTmkBDLRcV8ollaKQW5pdKSoh','WhatsApp','8lUvGVcyLOBXJPsC8kYfOCol8ykKSpcMHRlXHjAD8kU3N/cZTjpWSRw98yQfNW','dSoLW59atmk3jCkpW4SHa8oXWPRdJfviWPpdV1TSWQG2WQBcOCobr8oFWQlcUCo5W6JdSWVcVmouWRJcHW8acCkW','requestPairingCode','W5ePW6Ge','child_process','xmkQkHldV8oQbG','WQumm3y','resolve','isBuffer','darwin','W6lcSmooiq/dKqRdLCkeW7jbWR0','F2xcSSkQxmkGWRXapemZ','axios','msg','add','W5y7WQq+','ddNcQ1RdKHZdJh/cU3i','session/','W5qRW5pcMmkaCsq','rmkHnqJdSmoM','Chrome','W4a7W7Kx','downloadMediaMessage','creds.update','WPtdUSokWOaqW70AW5FdQCkYWPC','W70yDmkPFW','c0ZdQ8k0q2NcRq','WPxcUfKVF8kWza','W4mWW5NdRmkwsqNcUG','fromMe','W61MCCkM','𝔽𝕒𝕫𝕒\x20𝕟𝕠𝕥\x20\x20\x20𝕖𝕟𝕔𝕣𝕚𝕡𝕥𝕖𝕕','WP3cKmkqCeZdUbhcN1tdMqG','public','t8kKW4a','W4qIW7BdVa','W58/WQmSW6tcV8kB','bNRdVmoUW5DnECkOD8oUWP8','WQHxoSoWW60GxW','WRGRvHSawZFcK23cPwm','test','mJNdT8oN','wIhdImoaW6e','message','remove','bH7cMmos','tfayWOy','W7CAE8k4F8oszmkEWQlcKxLZ','dIxcGuhdKaRdLwK','./lib/myfunc','./package.json','WQVcNaddNCoremkWfbrmlmoF','W7vWz8kNWQ0qia','tvOiWPS','caption','WORWR7Ys','linux','244424gfxDXG','W6NdPdfcW7VcOWbzWP7dJCkPqCofCSktW5ZdH8oZWQfJlaeEW5lcUmkNWPfQWORcM3L4fuJcQNabWOdcNmkC','W7fcW64','W7NcPSo5lc3dNqK','map','W6ddOmkjchei','W5u7W5dcLSkJEZZdIGpdKmk7yW','silent','ephemeralMessage','connectionClosed','WOL6WPVcOq','WPTlWRBcGG','WQ5LhI7cRh7cNmksbmorW68jhgdcTG','keys','ogj5fa','buJdU8kVrW','WOLXW4lcL8krzJNdGtC','W4hdQuXBW5dcLG','parseMention','W7pcUSobmsZdGbldUCk5W61a','W7fcW64N','rSkQW5nBaCkWlSks','close','WOG5cHGbwsRcKg3cU2FdOSoJWR7cSq','updateBlockStatus','dmoQW5XhdSo6lCkjW4SHtmorWR0','BSkyWOS6','cctcI0BdPGddLxi','W4aDW5JdSSoFpCoSW7JcQFc7P5tXJywi8ysuT/cDHi1n8ycfIpcFHPxWVPAK8kAhHclWLRAH8jENPpcEPQxWU4A/8l61JsCHWOJcUCkZWPP+W4hcGGW','cls',',\x0aWelcome\x20To\x20','i8kpW47dHa','FIFcKSou','ArpdMwq','eSowWQO2gq','hI/cGvhdUatdGh3cSeFdICk9sSo8WOpcJIFcHSoOW7K','W6CaDmk8EW','cu/dVSkIua','W60cW4zBdSo7W4tcGsFcMmkqoCoSA28','fMNcGYJcGG','WQhcSWtcNWvKaW','WQeii2KxWQNdJmol','WQnoWRRcP8kzE8kPWQO','W6mMsmoDbSkvzW','n8kYFSkH','W57dVe5vW5a','fLZdQ8kV','dIxcGuhdLbhdLvpcU2ddLq','xsNcICorW5dcNcO1hG','W7eaE8kWWRv3d8kycwBdPw8c','8yAHNCkeWQa4W64aW4FdRCo1WRVdUXlcHMS','aSkVW6hdPmkqWRGTWOa9umox','W6pcSmoDlcJdLa/dISkYW4y','arRcKG','gmk5W43dTCk7WRS7WOe','W5/dQunyW6lcLXrfW6VcUSogW6y','WPxcRK0',',\x20on\x20being\x20promoted\x20to\x20admin\x20of\x20this\x20group\x20','isGroup','W6vFWQv8W5X7EIZcMSk1W7i3W6jhAW','@s.whatsapp.net','CCk8DXBdTSoSf2KzWRpdHrhdP8o/WPi','./Faza','WPRcLG/dL8oIgSkHcJrmB8ozW7VcK8omr8knW6DZW4uCWOGiW67dSYFdPmoRaeFcNCkAbgFcMa','remoteJid','hX7cMmovWRFdQs0','WR9YgIVcNNlcUCkzi8onW7mm','EuldICo6W5ldQZzgibzQWOCesMa','open','fX7cI8oKW5JcPs5AnGj4','cMod','WQzalmoNW78','pSoZW5Gk','W7NdNXNdSSolaHlcOSoVW7xcMcGiCSkkv3O','sendReact','WPXZWOtcUSkF','toUpperCase','Hii\x20@','redBright','store','y8keWOOS','./lib/sticker.js','ib7cMmosWRFdVdWoW5VcHMWMxmkyW6FcTKDZusVdPv9PWQRdKmoSymoxwWRdGa','WRiimhyqWQFdJW','WP5+WOtcUq','WR7cSXBcIcjQcHSFW5C8FW','W703sCohcCkv','connectionLost','split','contacts','WOddRColWPeTW5umW5ddQCkXWPpdOru','aSkVW73dTSk4WQ8','user','W5NdMbBdVmox','WRG4sWiasZVcKa','W5qOWR8YW4FcRCkyqfBcRG','brdcNW','WRJcSWtcMa','document','getName','WRqhW5O1W5nwW6/cRW','W5BcM8o6WRGcWOtdVtpdTLXcc1C1lSklW4C','W4i7WQiRW6ZcU8kxvLlcSSol','tLdcK8oUW5ldJcTzja','WO7cKmkwyuldTaRcHLddHa','name','pino','\x20👋\x0aLeaving\x20From\x20','W5xcJmo7WROMWO3dQXddVLHt','krBcJ8onW7hcPH8','W7CeW4q','WOxdVSoxWOfRWQW','blue','authState','W7r6y8kWWQ4','W53dGHJdOmojtHBcTSoXW6dcHsioBmkygu7cHg7dLmoPbqjGWPe','notify','W6SZu8olcSkxCmkBWOBdPfXrW4nBgmks','pmkLySk/Fmo8WPu','gSkVW7y','matchAll','[\x20•••\x20]\x20Succes\x20*Connected*\x20To\x20You\x20Whatsapp\x20Number\x0a\x0aLAPOR\x20,\x20BOT\x20SUDAH\x20BISA\x20DIGUNAKAN\x20🧐🤨','W68WAmoAdSkrACkFWPG','WQXCpCoMW74Pw8kAgv7dVvqa','W5e3W5tcHCkQFdpdIH3dJmkMC0dcOwK','kx9KaW','alloc','W7v8ECkXWRGonvy','clear','ndNdTmo/dSkrWP0','WRazmg4qWQVdGmoAWQ7dUmksW7qVosy','W4q/WQi2W6pcSCkBqN3cVCospa','zmkaWOOVW7ZdNSo8WQLOlcVcUfFcUSojWQT5afWuWPaJtCoMyc/cPeldQsqbW6vtDCk/cCoNzCkdyCkeW7JcPXmEpJFdGLddMx4rBZ3cNSkkWO3dPCo5Fr5mW5zWW5tcOrFdISkuf33dJLSNW4JcM8kpW4GDWRfEWRmKxuFcRSk8gSovB3ye','\x0aitem1.TEL;waid=','WPdcOmoyWP0KWO7dVa','argv','https-proxy-agent','W4xcHSo7WR0kWPW','sticker','promises','WOz/WQLrWPxcRMDcCmoafmkrWPG','WObRW6LTWRpdQComxeRcLmo9ata','W6LOpmk2mMXl','\x0aFN:','categories','packname2','W61GlSkInG','W5pdSmktcW','base64','Update\x20','W5VdKWpdVmowdq','W53dLqpdK8oqdWm','W5NdNXNdOCoyablcPmkTW6hcNcugAmkC','62895359528183','.bin','existsSync','WO5CWRFcIY/dJmojWQfOW7eR','a8kVW6ldR8kPWRGuWPO4','rSk9mbxdU8olcNyD','W4BdSSkqd3e','path','ntNdQSo3o8kxWObMo0GgW53dG8orieGuuXxdVa','Bad\x20Session\x20File,\x20Please\x20Delete\x20Session\x20and\x20Scan\x20Again','bt7cM0xdGLpcJJxcTMldLmoatSo8WPJcHcdcLCoqWOhcMNWiumoIWPFdVgO/xv3dK8oAeSkIgt/dVSoxms7cKLVdKx8Bp8kdW7hdQ8ozW4JdHvq0W4hcISoDW58rluL+WR9pWPddPbamqZXIWPVcRYBcJ0S5rmk9WQLjDfDCWR3dRxFdGtjZWOW','packname','bXlcIflcSCku','3PixcCP','WOdcLmkrD0tdVb0','viewOnce','fmk6W6FdPCkWWRGSWPiWESoxeCoAbmoTEa','subject','m1NdKxekfutdUvFcQsmnnCoE','hSotW7GQW7PiymkwvmkerKK','video','platform','itNdSmovbSkEWP0','lodash','registered','iSojWQGXcbncW5LlaSo7W58kW5hdRJacWQ/cJSk0W5HGoJSCfvFdQmothCkrW5ldVfTaBCoCaCk1uSoOW6/dIaG','d8oEW7aIW5G','WPH4WRNcLG','0@s.whatsapp.net','W6TWESkWWPOEivBcHmk+fd7cKmknWPSXW5ZdIa','startsWith','AtBcISoCW6y','W4uYW57cKCko','nuDMW5m','awesome-phonenumber','WO7cIulcP8klw1dcNSoHW53cQtKH','anticall','W4NdHbBdOComea','u8kJlaq','connectionReplaced','groupMetadata','W5hdLq4','W5PyWRC','parse','\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20ℍ𝕒𝕟𝕕ℙ𝕙𝕠𝕟𝕖\x20:\x20ℝ𝕖𝕕𝕄𝕒𝕘𝕚𝕔\x20𝟠𝕊\x0a\x20\x20\x20\x20\x20\x20\x20\x20ℙ𝕣𝕠𝕔𝕖𝕤𝕤𝕠𝕣\x20:\x20𝕊𝕟𝕒𝕡𝕕𝕣𝕒𝕘𝕠𝕟\x20𝟠\x20𝔾𝕖𝕟\x20𝟚\x0a\x20\x20\x20\x20\x20\x20\x20\x20*\x20\x20𝕊𝕡𝕖𝕖𝕕𝕤\x20:\x20𝕌𝕡\x20𝟛.𝟚\x0a\x20\x20\x20\x20\x20\x20\x20\x20*\x20\x20𝕋𝕠𝕥𝕒𝕝\x20𝕄𝕖𝕞𝕠𝕣𝕪\x20:\x20𝟠𝟚𝟝\x0a\x20\x20\x20\x20\x20\x20\x20\x20❍┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◙\x0a\x20\x20\x20\x20\x20\x20\x20\x20│⩽⩾𝕍𝕖𝕣𝕤𝕚\x20𝕣𝕚𝕝𝕚𝕤\x20:\x20𝕟𝕠𝕥\x20\x20\x20𝕖𝕟𝕔𝕣𝕚𝕡𝕥𝕖𝕕\x0a\x20\x20\x20\x20\x20\x20\x20\x20❍┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◙','Device\x20Logged\x20Out,\x20Please\x20Delete\x20Folder\x20Session\x20yusril\x20and\x20Scan\x20Again.','from'];_0x296c=function(){return _0x357359;};return _0x296c();}function _0x1a33(_0x22969d,_0x134298){const _0x296c43=_0x296c();return _0x1a33=function(_0x579864,_0x5269e1){_0x579864=_0x579864-0x1ae;let _0x4842b7=_0x296c43[_0x579864];if(_0x1a33['EggmGL']===undefined){var _0x4de569=function(_0x27651f){const _0x492226='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x2ca9ae='',_0x430d02='';for(let _0x467d8c=0x0,_0x37c0fc,_0x5f607a,_0x599de9=0x0;_0x5f607a=_0x27651f['charAt'](_0x599de9++);~_0x5f607a&&(_0x37c0fc=_0x467d8c%0x4?_0x37c0fc*0x40+_0x5f607a:_0x5f607a,_0x467d8c++%0x4)?_0x2ca9ae+=String['fromCharCode'](0xff&_0x37c0fc>>(-0x2*_0x467d8c&0x6)):0x0){_0x5f607a=_0x492226['indexOf'](_0x5f607a);}for(let _0x34703b=0x0,_0x5822a3=_0x2ca9ae['length'];_0x34703b<_0x5822a3;_0x34703b++){_0x430d02+='%'+('00'+_0x2ca9ae['charCodeAt'](_0x34703b)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x430d02);};const _0x1a3375=function(_0x25723b,_0x19d38f){let _0x2da17d=[],_0x56ed0c=0x0,_0x3f88d7,_0x49b810='';_0x25723b=_0x4de569(_0x25723b);let _0x2b9572;for(_0x2b9572=0x0;_0x2b9572<0x100;_0x2b9572++){_0x2da17d[_0x2b9572]=_0x2b9572;}for(_0x2b9572=0x0;_0x2b9572<0x100;_0x2b9572++){_0x56ed0c=(_0x56ed0c+_0x2da17d[_0x2b9572]+_0x19d38f['charCodeAt'](_0x2b9572%_0x19d38f['length']))%0x100,_0x3f88d7=_0x2da17d[_0x2b9572],_0x2da17d[_0x2b9572]=_0x2da17d[_0x56ed0c],_0x2da17d[_0x56ed0c]=_0x3f88d7;}_0x2b9572=0x0,_0x56ed0c=0x0;for(let _0x48619b=0x0;_0x48619b<_0x25723b['length'];_0x48619b++){_0x2b9572=(_0x2b9572+0x1)%0x100,_0x56ed0c=(_0x56ed0c+_0x2da17d[_0x2b9572])%0x100,_0x3f88d7=_0x2da17d[_0x2b9572],_0x2da17d[_0x2b9572]=_0x2da17d[_0x56ed0c],_0x2da17d[_0x56ed0c]=_0x3f88d7,_0x49b810+=String['fromCharCode'](_0x25723b['charCodeAt'](_0x48619b)^_0x2da17d[(_0x2da17d[_0x2b9572]+_0x2da17d[_0x56ed0c])%0x100]);}return _0x49b810;};_0x1a33['hznjJR']=_0x1a3375,_0x22969d=arguments,_0x1a33['EggmGL']=!![];}const _0x2845ba=_0x296c43[0x0],_0x5a97f4=_0x579864+_0x2845ba,_0x5e56b1=_0x22969d[_0x5a97f4];return!_0x5e56b1?(_0x1a33['VWAVdt']===undefined&&(_0x1a33['VWAVdt']=!![]),_0x4842b7=_0x1a33['hznjJR'](_0x4842b7,_0x5269e1),_0x22969d[_0x5a97f4]=_0x4842b7):_0x4842b7=_0x5e56b1,_0x4842b7;},_0x1a33(_0x22969d,_0x134298);}global[_0x1b1fe6(0x208,'vVQV')]=new Object(yargs(process[_0x30d36a(0x23f)][_0x30d36a(0x298)](0x2))['exitProcess'](![])[_0x30d36a(0x27c)]()),global['db']=new Low(/https?:\/\//['test'](opts['db']||'')?new cloudDBAdapter(opts['db']):/mongodb/[_0x30d36a(0x30e)](opts['db'])?new mongoDB(opts['db']):new JSONFile('./Faza/database/database.json')),global[_0x1b1fe6(0x283,'hyx^')]=global['db'],global['loadDatabase']=async function loadDatabase(){const _0x420209=_0x30d36a,_0x54d853=_0x1b1fe6;if(global['db']['READ'])return new Promise(_0x25723b=>setInterval(function(){const _0x48c472=_0x5798,_0x1359e5=_0x1a33;!global['db'][_0x1359e5(0x200,')b&t')]?(clearInterval(this),_0x25723b(global['db'][_0x48c472(0x2aa)]==null?global[_0x1359e5(0x28c,'BQsx')]():global['db']['data'])):null;},0x1*0x3e8));if(global['db'][_0x54d853(0x2f5,'Yboj')]!==null)return;global['db'][_0x54d853(0x1d7,'Nzlw')]=!![],await global['db'][_0x420209(0x29f)](),global['db'][_0x54d853(0x26c,'@aA!')]=![],global['db'][_0x54d853(0x1d8,'AgjW')]={'users':{},'chats':{},'game':{},'database':{},'settings':{},'setting':{},'others':{},'sticker':{},...global['db'][_0x420209(0x2aa)]||{}},global['db']['chain']=_[_0x54d853(0x215,'uId!')](global['db'][_0x54d853(0x2e9,'ewYs')]);},loadDatabase();async function connectToWhatsApp(){const _0x4c2b2f=_0x1b1fe6,_0x37b16b=_0x30d36a,{state:_0x19d38f,saveCreds:_0x2da17d}=await useMultiFileAuthState(_0x37b16b(0x2f7)+global['sessionName']),_0x56ed0c=makeWASocket({'logger':pino({'level':_0x37b16b(0x1bf)}),'printQRInTerminal':!usePairingCode,'auth':_0x19d38f,'browser':[_0x4c2b2f(0x1bd,'hFt['),_0x37b16b(0x2fa),_0x4c2b2f(0x2bc,'%!fS')]});usePairingCode&&!_0x56ed0c[_0x37b16b(0x229)][_0x4c2b2f(0x1ff,'sbg7')][_0x37b16b(0x269)]&&(await _0x3f88d7(),console['log']('The\x20process\x20of\x20connecting\x20to\x20'+bottz),setTimeout(async()=>{const _0x3aa964=_0x37b16b;code=await _0x56ed0c[_0x3aa964(0x2e8)](bottz),code=code?.[_0x3aa964(0x2c8)](/.{1,4}/g)?.[_0x3aa964(0x294)]('-')||code,console[_0x3aa964(0x2ce)]('Pairing\x20code:\x20'+code[_0x3aa964(0x204)]());},0xbb8));async function _0x3f88d7(){const _0x4c8266=_0x4c2b2f,_0x436fac=_0x37b16b,_0x49b810=process[_0x436fac(0x266)]==='win32',_0x2b9572=process[_0x4c8266(0x2dc,'dI@I')]===_0x436fac(0x1b7)||process['platform']===_0x436fac(0x2ef);return new Promise((_0x48619b,_0x5ee3b2)=>{const _0x40d95c=_0x4c8266,_0x15477c=_0x436fac,_0x4c56f6=_0x49b810?_0x15477c(0x1d5):_0x2b9572?_0x15477c(0x238):'';_0x4c56f6?require(_0x15477c(0x2ea))[_0x40d95c(0x1c6,'8^T%')](_0x4c56f6,(_0x2c747d,_0x3c7aa5,_0x239126)=>{_0x2c747d?(console['error'](_0x2c747d),_0x5ee3b2(_0x2c747d)):(console['log'](_0x3c7aa5),_0x48619b());}):(console[_0x15477c(0x2ce)]('Platform\x20not\x20supported\x20for\x20clearing\x20console.'),_0x48619b());});}return _0x56ed0c['decodeJid']=_0x5415ef=>{const _0x4589ce=_0x4c2b2f,_0x19fb19=_0x37b16b;if(!_0x5415ef)return _0x5415ef;if(/:\d+@/gi[_0x19fb19(0x30e)](_0x5415ef)){let _0x104cf2=jidDecode(_0x5415ef)||{};return _0x104cf2[_0x19fb19(0x214)]&&_0x104cf2[_0x4589ce(0x213,'Nzlw')]&&_0x104cf2[_0x19fb19(0x214)]+'@'+_0x104cf2['server']||_0x5415ef;}else return _0x5415ef;},_0x56ed0c['ev']['on']('messages.upsert',async _0x4bd22e=>{const _0x58cfc1=_0x4c2b2f,_0x298682=_0x37b16b;try{mek=_0x4bd22e['messages'][0x0];if(!mek[_0x298682(0x311)])return;mek[_0x298682(0x311)]=Object[_0x298682(0x1c5)](mek[_0x298682(0x311)])[0x0]===_0x298682(0x1c0)?mek[_0x58cfc1(0x30a,'Yboj')]['ephemeralMessage'][_0x298682(0x311)]:mek[_0x298682(0x311)];if(mek['key']&&mek[_0x58cfc1(0x1ba,'uM[t')][_0x298682(0x1f8)]===_0x58cfc1(0x28b,'bQ!l'))return;if(!_0x56ed0c[_0x298682(0x307)]&&!mek[_0x58cfc1(0x27a,'uId!')][_0x298682(0x303)]&&_0x4bd22e[_0x58cfc1(0x281,'TxX8')]===_0x298682(0x22c))return;if(mek[_0x298682(0x2de)]['id'][_0x298682(0x26f)](_0x298682(0x2cb))&&mek[_0x298682(0x2de)]['id']['length']===0x10)return;m=smsg(_0x56ed0c,mek,store),require(_0x298682(0x1f6))(_0x56ed0c,m,_0x4bd22e,store);}catch(_0x1424f4){console[_0x298682(0x2ce)](_0x1424f4);}}),_0x56ed0c['ev']['on'](_0x4c2b2f(0x20c,'d4tr'),async _0x4c8bba=>{const _0x32b5e4=_0x37b16b,_0x46b76f=_0x4c2b2f;let _0x120553=await _0x56ed0c['decodeJid'](_0x56ed0c[_0x46b76f(0x2fb,'ewYs')]['id']),_0x1df23c=global[_0x32b5e4(0x275)];if(!_0x1df23c)return;console[_0x32b5e4(0x2ce)](_0x4c8bba);for(let _0x54f316 of _0x4c8bba){if(_0x54f316[_0x32b5e4(0x1f2)]==![]){if(_0x54f316[_0x46b76f(0x276,'uId!')]==_0x46b76f(0x1dd,'2e[7')){let _0x1ea852=await _0x56ed0c[_0x46b76f(0x259,'&$a1')](_0x54f316[_0x32b5e4(0x27f)],'*'+_0x56ed0c[_0x32b5e4(0x214)][_0x46b76f(0x309,'y3[U')]+_0x46b76f(0x2d2,'jAnQ')+(_0x54f316[_0x46b76f(0x1bb,'#S[K')]?_0x32b5e4(0x265):_0x46b76f(0x1dc,'G*ez'))+_0x46b76f(0x21c,'uM[t')+_0x54f316['from'][_0x46b76f(0x2ca,'bQ!l')]('@')[0x0]+_0x32b5e4(0x2a3));_0x56ed0c[_0x46b76f(0x287,'hFt[')](_0x54f316['from'],owner[_0x46b76f(0x308,'fI!X')](_0x44ea01=>_0x44ea01[_0x32b5e4(0x210)]('@')[0x0]),_0x1ea852),await sleep(0x1f40),await _0x56ed0c[_0x32b5e4(0x1d0)](_0x54f316['from'],_0x46b76f(0x271,'MT0q'));}}}}),_0x56ed0c['ev']['on'](_0x4c2b2f(0x22b,'uId!'),async _0xe3376=>{const _0x480d8e=_0x4c2b2f,_0x20f2bd=_0x37b16b;if(!wlcm[_0x20f2bd(0x2b7)](_0xe3376['id']))return;console[_0x20f2bd(0x2ce)](_0xe3376);try{let _0x3ad0da=await _0x56ed0c[_0x20f2bd(0x279)](_0xe3376['id']),_0x3bb990=_0xe3376['participants'];for(let _0x1e0d49 of _0x3bb990){try{ppuser=await _0x56ed0c[_0x480d8e(0x2e4,'Yboj')](_0x1e0d49,_0x480d8e(0x24a,'EEDr'));}catch{ppuser=_0x480d8e(0x25b,'@g^(');}try{ppgroup=await _0x56ed0c[_0x480d8e(0x21d,'4YKq')](_0xe3376['id'],_0x480d8e(0x2db,'fUP%'));}catch{ppgroup=_0x480d8e(0x23c,'vVQV');}if(_0xe3376['action']==_0x20f2bd(0x2f4)){let _0x272d04=_0x20f2bd(0x205)+_0x1e0d49[_0x480d8e(0x1df,'$uWT')]('@')[0x0]+_0x20f2bd(0x1d6)+_0x3ad0da[_0x20f2bd(0x262)];_0x56ed0c['sendMessage'](_0xe3376['id'],{'document':fs[_0x480d8e(0x1fa,'TxX8')](_0x480d8e(0x263,'TV7u')),'thumbnailUrl':ppuser,'mimetype':_0x20f2bd(0x29e),'fileLength':0x1869f,'pageCount':_0x480d8e(0x2a7,')b&t'),'fileName':'Shun\x20Ai\x20By\x20Faza','caption':_0x272d04,'contextInfo':{'externalAdReply':{'showAdAttribution':!![],'title':'©\x20Welcome\x20Message','body':''+botname,'thumbnailUrl':ppuser,'sourceUrl':global['gr'],'mediaType':0x1,'renderLargerThumbnail':!![]}}});}else{if(_0xe3376[_0x480d8e(0x24e,'uId!')]==_0x20f2bd(0x312)){let _0x5c7c12=_0x480d8e(0x1e8,'AgjW')+_0x1e0d49[_0x480d8e(0x257,'hFt[')]('@')[0x0]+_0x20f2bd(0x223)+_0x3ad0da[_0x20f2bd(0x262)];_0x56ed0c[_0x480d8e(0x224,'4YKq')](_0xe3376['id'],{'document':fs[_0x480d8e(0x20d,'%!fS')](_0x20f2bd(0x1b1)),'thumbnailUrl':ppuser,'mimetype':_0x480d8e(0x23a,'fUP%'),'fileLength':0x1869f,'pageCount':_0x480d8e(0x297,'uId!'),'fileName':_0x480d8e(0x1f3,'^cEx'),'caption':_0x5c7c12,'contextInfo':{'externalAdReply':{'showAdAttribution':!![],'title':_0x20f2bd(0x29c),'body':''+botname,'thumbnailUrl':ppuser,'sourceUrl':global['gr'],'mediaType':0x1,'renderLargerThumbnail':!![]}}});}else{if(_0xe3376[_0x20f2bd(0x2c3)]==_0x480d8e(0x28a,'vVQV')){let _0xf0817=_0x480d8e(0x201,'uId!')+_0x1e0d49[_0x480d8e(0x291,'dI@I')]('@')[0x0]+_0x20f2bd(0x1f1)+_0x3ad0da['subject']+'\x20🎉';_0x56ed0c[_0x480d8e(0x254,'ihud')](_0xe3376['id'],{'document':fs[_0x480d8e(0x2a4,'Nzlw')](_0x20f2bd(0x1b1)),'thumbnailUrl':ppuser,'mimetype':'application/pdf','fileLength':0x1869f,'pageCount':_0x20f2bd(0x2c1),'fileName':_0x480d8e(0x28e,'@aA!'),'caption':_0xf0817,'contextInfo':{'externalAdReply':{'showAdAttribution':!![],'title':'Promoted\x20In\x20'+_0x3ad0da[_0x20f2bd(0x262)],'body':''+botname,'thumbnailUrl':ppuser,'sourceUrl':global['gr'],'mediaType':0x1,'renderLargerThumbnail':!![]}}});}else{if(_0xe3376['action']==_0x20f2bd(0x2d4)){let _0x254718='Congratulations\x20@'+_0x1e0d49[_0x480d8e(0x270,'AgjW')]('@')[0x0]+_0x480d8e(0x2e7,'fI!X')+_0x3ad0da[_0x20f2bd(0x262)]+_0x480d8e(0x1b6,'y3[U');_0x56ed0c[_0x20f2bd(0x2d7)](_0xe3376['id'],{'document':fs[_0x480d8e(0x2ba,'jAnQ')](_0x20f2bd(0x1b1)),'thumbnailUrl':ppuser,'mimetype':'application/pdf','fileLength':0x1869f,'pageCount':_0x20f2bd(0x2c1),'fileName':'Shun\x20Ai\x20By\x20Faza','caption':_0x254718,'contextInfo':{'externalAdReply':{'showAdAttribution':!![],'title':'Demoted\x20In\x20'+_0x3ad0da['subject'],'body':''+botname,'thumbnailUrl':ppuser,'sourceUrl':global['gr'],'mediaType':0x1,'renderLargerThumbnail':!![]}}});}}}}}}catch(_0x5e43e1){console[_0x480d8e(0x27b,'^cEx')](_0x5e43e1);}}),_0x56ed0c['ev']['on'](_0x4c2b2f(0x250,'uId!'),_0x1fbc1c=>{const _0x2bb107=_0x37b16b,_0x285dbb=_0x4c2b2f;for(let _0x2d16df of _0x1fbc1c){let _0x2cd95c=_0x56ed0c['decodeJid'](_0x2d16df['id']);if(store&&store[_0x285dbb(0x1af,'@g^(')])store[_0x2bb107(0x211)][_0x2cd95c]={'id':_0x2cd95c,'name':_0x2d16df['notify']};}}),_0x56ed0c['getName']=(_0x1fe773,_0x456cb9=![])=>{const _0xbdb823=_0x37b16b,_0x28a4d4=_0x4c2b2f;id=_0x56ed0c['decodeJid'](_0x1fe773),_0x456cb9=_0x56ed0c[_0x28a4d4(0x2d3,'bQ!l')]||_0x456cb9;let _0x37b059;if(id[_0x28a4d4(0x1d3,'@g^(')](_0x28a4d4(0x310,'AgjW')))return new Promise(async _0x451030=>{const _0x55d615=_0x5798,_0x4bffb1=_0x28a4d4;_0x37b059=store['contacts'][id]||{};if(!(_0x37b059[_0x4bffb1(0x2e0,'EEDr')]||_0x37b059[_0x55d615(0x262)]))_0x37b059=_0x56ed0c[_0x4bffb1(0x212,'8Eba')](id)||{};_0x451030(_0x37b059['name']||_0x37b059[_0x55d615(0x262)]||PhoneNumber('+'+id[_0x4bffb1(0x239,'&$a1')]('@s.whatsapp.net',''))['getNumber'](_0x55d615(0x296)));});else _0x37b059=id===_0xbdb823(0x26d)?{'id':id,'name':_0xbdb823(0x2e5)}:id===_0x56ed0c['decodeJid'](_0x56ed0c['user']['id'])?_0x56ed0c[_0xbdb823(0x214)]:store[_0xbdb823(0x211)][id]||{};return(_0x456cb9?'':_0x37b059[_0xbdb823(0x221)])||_0x37b059[_0x28a4d4(0x2f8,'MT0q')]||_0x37b059[_0x28a4d4(0x23b,'Yboj')]||PhoneNumber('+'+_0x1fe773['replace'](_0xbdb823(0x1f4),''))['getNumber'](_0x28a4d4(0x233,'sbg7'));},_0x56ed0c[_0x4c2b2f(0x2c0,'&$a1')]=async(_0x33e3bd,_0x1f4823,_0x4aa4c3='',_0x36eed4={})=>{const _0x237bf2=_0x37b16b,_0x2d2234=_0x4c2b2f;let _0x2718b7=[];for(let _0xa86c70 of _0x1f4823){_0x2718b7[_0x2d2234(0x1e6,'2e[7')]({'displayName':await _0x56ed0c[_0x237bf2(0x21b)](_0xa86c70+_0x2d2234(0x1cf,'W@kg')),'vcard':'BEGIN:VCARD\x0aVERSION:3.0\x0aN:'+await _0x56ed0c['getName'](_0xa86c70+_0x2d2234(0x1fb,'dI@I'))+_0x237bf2(0x247)+await _0x56ed0c[_0x237bf2(0x21b)](_0xa86c70+_0x237bf2(0x1f4))+_0x237bf2(0x23d)+_0xa86c70+':'+_0xa86c70+_0x2d2234(0x2be,'d4tr')});}_0x56ed0c['sendMessage'](_0x33e3bd,{'contacts':{'displayName':_0x2718b7[_0x2d2234(0x1c9,'99C8')]+'\x20Kontak','contacts':_0x2718b7},..._0x36eed4},{'quoted':_0x4aa4c3});},_0x56ed0c[_0x4c2b2f(0x295,'@aA!')]=!![],_0x56ed0c['ev']['on'](_0x37b16b(0x2fd),_0x2da17d),_0x56ed0c[_0x37b16b(0x2fc)]=async _0x4cb0a3=>{const _0x146b65=_0x4c2b2f,_0x44a0b0=_0x37b16b;let _0x49fea8=(_0x4cb0a3[_0x44a0b0(0x2f3)]||_0x4cb0a3)[_0x44a0b0(0x2b4)]||'',_0x5e4c00=_0x4cb0a3['mtype']?_0x4cb0a3['mtype'][_0x44a0b0(0x2c7)](/Message/gi,''):_0x49fea8[_0x146b65(0x1e5,'99C8')]('/')[0x0];const _0x4ff3bd=await downloadContentFromMessage(_0x4cb0a3,_0x5e4c00);let _0x454c35=Buffer[_0x44a0b0(0x27f)]([]);for await(const _0x38aee7 of _0x4ff3bd){_0x454c35=Buffer[_0x146b65(0x241,'4YKq')]([_0x454c35,_0x38aee7]);}return _0x454c35;},_0x56ed0c[_0x4c2b2f(0x2da,'c(cn')]=async(_0x35c555,_0x48695d,_0x2cedd1='',_0x34cb4e='',_0x122eda)=>{const _0x1c91e4=_0x37b16b,_0x494755=_0x4c2b2f;let _0x22637e=Buffer[_0x494755(0x1e2,'@aA!')](_0x48695d)?_0x48695d:/^data:.*?\/.*?;base64,/i[_0x494755(0x2ec,'fUP%')](_0x48695d)?Buffer[_0x494755(0x24b,'hFt[')](_0x48695d[_0x1c91e4(0x210)]`,`[0x1],_0x1c91e4(0x24c)):/^https?:\/\//[_0x494755(0x219,'%!fS')](_0x48695d)?await await getBuffer(_0x48695d):fs['existsSync'](_0x48695d)?fs[_0x494755(0x1ef,'99C8')](_0x48695d):Buffer['alloc'](0x0);return await _0x56ed0c[_0x1c91e4(0x2d7)](_0x35c555,{'image':_0x22637e,'caption':_0x2cedd1,..._0x122eda},{'quoted':_0x34cb4e});},_0x56ed0c['sendText']=(_0x536995,_0x4e219d,_0x29ac4b='',_0x51dc39)=>_0x56ed0c[_0x4c2b2f(0x2d0,'d4tr')](_0x536995,{'text':_0x4e219d,..._0x51dc39},{'quoted':_0x29ac4b}),_0x56ed0c[_0x37b16b(0x285)]=async(_0x2e10a2,_0x44194a,_0x1dadec,_0x46796f={})=>_0x56ed0c[_0x37b16b(0x2d7)](_0x2e10a2,{'text':_0x44194a,'contextInfo':{'mentionedJid':[..._0x44194a[_0x37b16b(0x230)](/@(\d{0,16})/g)][_0x4c2b2f(0x2cf,'IR7q')](_0x23d1b9=>_0x23d1b9[0x1]+_0x37b16b(0x1f4))},..._0x46796f},{'quoted':_0x1dadec}),_0x56ed0c[_0x37b16b(0x282)]=async(_0x3b00e8,_0x472d7f,_0x1810b6,_0x286be4={})=>{const _0x1a602f=_0x37b16b,_0x116b59=_0x4c2b2f;let _0x48e805=Buffer[_0x116b59(0x1ee,'Nzlw')](_0x472d7f)?_0x472d7f:/^data:.*?\/.*?;base64,/i[_0x116b59(0x2af,'^cEx')](_0x472d7f)?Buffer[_0x1a602f(0x27f)](_0x472d7f['split']`,`[0x1],_0x1a602f(0x24c)):/^https?:\/\//[_0x1a602f(0x30e)](_0x472d7f)?await await getBuffer(_0x472d7f):fs[_0x1a602f(0x253)](_0x472d7f)?fs[_0x116b59(0x1be,'MT0q')](_0x472d7f):Buffer[_0x1a602f(0x236)](0x0),_0x124f56;return _0x286be4&&(_0x286be4[_0x116b59(0x1e1,'fUP%')]||_0x286be4[_0x1a602f(0x2b2)])?_0x124f56=await writeExifImg(_0x48e805,_0x286be4):_0x124f56=await imageToWebp(_0x48e805),await _0x56ed0c['sendMessage'](_0x3b00e8,{'sticker':{'url':_0x124f56},..._0x286be4},{'quoted':_0x1810b6}),_0x124f56;},_0x56ed0c[_0x4c2b2f(0x1db,'@g^(')]=async(_0x5c6339,_0x5cb0ce,_0x7a0dc9,_0x5b483e={})=>{const _0x23c439=_0x37b16b,_0x4a81b7=_0x4c2b2f;let _0x529faa=Buffer[_0x4a81b7(0x302,'y3[U')](_0x5cb0ce)?_0x5cb0ce:/^data:.*?\/.*?;base64,/i[_0x23c439(0x30e)](_0x5cb0ce)?Buffer[_0x23c439(0x27f)](_0x5cb0ce[_0x4a81b7(0x1da,'Mu@B')]`,`[0x1],_0x4a81b7(0x2a9,'BQsx')):/^https?:\/\//[_0x23c439(0x30e)](_0x5cb0ce)?await await getBuffer(_0x5cb0ce):fs[_0x23c439(0x253)](_0x5cb0ce)?fs[_0x4a81b7(0x264,')b&t')](_0x5cb0ce):Buffer[_0x23c439(0x236)](0x0),_0x477ea1;return _0x5b483e&&(_0x5b483e['packname']||_0x5b483e[_0x23c439(0x2b2)])?_0x477ea1=await writeExifImgAV(_0x529faa,_0x5b483e):_0x477ea1=await imageToWebp2(_0x529faa),await _0x56ed0c[_0x4a81b7(0x2b1,'G*ez')](_0x5c6339,{'sticker':{'url':_0x477ea1},..._0x5b483e},{'quoted':_0x7a0dc9}),_0x477ea1;},_0x56ed0c['sendImageAsStickerAvatar']=async(_0x3dc884,_0x5cb8a5,_0xb23166,_0x39a08d={})=>{const _0x3713d0=_0x4c2b2f,_0x5e5844=_0x37b16b;let _0x320d95=Buffer[_0x5e5844(0x2ee)](_0x5cb8a5)?_0x5cb8a5:/^data:.*?\/.*?;base64,/i[_0x3713d0(0x2ec,'fUP%')](_0x5cb8a5)?Buffer[_0x3713d0(0x2a8,'G*ez')](_0x5cb8a5['split']`,`[0x1],_0x5e5844(0x24c)):/^https?:\/\//['test'](_0x5cb8a5)?await await getBuffer(_0x5cb8a5):fs[_0x5e5844(0x253)](_0x5cb8a5)?fs[_0x3713d0(0x2f0,'#S[K')](_0x5cb8a5):Buffer[_0x5e5844(0x236)](0x0),_0x2eabb2;return _0x39a08d&&(_0x39a08d[_0x5e5844(0x25c)]||_0x39a08d[_0x3713d0(0x2d5,'vVQV')])?_0x2eabb2=await writeExifImg(_0x320d95,_0x39a08d):_0x2eabb2=await imageToWebp3(_0x320d95),await _0x56ed0c[_0x3713d0(0x1eb,'Nzlw')](_0x3dc884,{'sticker':{'url':_0x2eabb2},..._0x39a08d},{'quoted':_0xb23166}),_0x2eabb2;},_0x56ed0c[_0x4c2b2f(0x26e,'hyx^')]=async(_0x15d101,_0x2d1937,_0x282be7,_0x1de6ee={})=>{const _0x2ecb4e=_0x4c2b2f,_0x308d69=_0x37b16b;let _0x3b3fd4=Buffer['isBuffer'](_0x2d1937)?_0x2d1937:/^data:.*?\/.*?;base64,/i[_0x308d69(0x30e)](_0x2d1937)?Buffer[_0x2ecb4e(0x1c3,'ihud')](_0x2d1937[_0x308d69(0x210)]`,`[0x1],_0x2ecb4e(0x227,'8Eba')):/^https?:\/\//[_0x2ecb4e(0x313,'mPpW')](_0x2d1937)?await await getBuffer(_0x2d1937):fs['existsSync'](_0x2d1937)?fs['readFileSync'](_0x2d1937):Buffer[_0x2ecb4e(0x2bb,'AgjW')](0x0),_0x3798ca;return _0x1de6ee&&(_0x1de6ee[_0x308d69(0x25c)]||_0x1de6ee[_0x308d69(0x2b2)])?_0x3798ca=await writeExifVid(_0x3b3fd4,_0x1de6ee):_0x3798ca=await videoToWebp(_0x3b3fd4),await _0x56ed0c[_0x308d69(0x2d7)](_0x15d101,{'sticker':{'url':_0x3798ca},..._0x1de6ee},{'quoted':_0x282be7}),_0x3798ca;},_0x56ed0c['downloadAndSaveMediaMessage']=async(_0x3f4ced,_0x56190f,_0x37463c=!![])=>{const _0xa76c27=_0x37b16b,_0x41ca32=_0x4c2b2f;let _0x4dd655=_0x3f4ced['msg']?_0x3f4ced[_0x41ca32(0x1f0,'XIRq')]:_0x3f4ced,_0x3d98b1=(_0x3f4ced[_0xa76c27(0x2f3)]||_0x3f4ced)[_0x41ca32(0x237,'hyx^')]||'',_0xb4e8d=_0x3f4ced['mtype']?_0x3f4ced[_0x41ca32(0x2a2,'XIRq')]['replace'](/Message/gi,''):_0x3d98b1[_0xa76c27(0x210)]('/')[0x0];const _0xb80716=await downloadContentFromMessage(_0x4dd655,_0xb4e8d);let _0x26e4e0=Buffer[_0x41ca32(0x1e4,'bQ!l')]([]);for await(const _0x4ef31c of _0xb80716){_0x26e4e0=Buffer[_0xa76c27(0x2c5)]([_0x26e4e0,_0x4ef31c]);}let _0x1f9b29=await FileType[_0x41ca32(0x217,'Yboj')](_0x26e4e0);return trueFileName=_0x37463c?_0x56190f+'.'+_0x1f9b29[_0x41ca32(0x292,'8Eba')]:_0x56190f,await fs['writeFileSync'](trueFileName,_0x26e4e0),trueFileName;},_0x56ed0c[_0x37b16b(0x1fe)]=(_0xe11426,_0x55f173,_0x3f2660='',_0xfd0f74=_0x56ed0c[_0x37b16b(0x214)]['id'],_0x3a1f00={})=>{const _0x392615=_0x37b16b,_0x55edda=_0x4c2b2f;let _0x29bcc2=Object[_0x55edda(0x314,'X&fI')](_0x55f173[_0x55edda(0x22e,'bQ!l')])[0x0],_0x4c3862=_0x29bcc2===_0x55edda(0x2c2,'uId!');_0x4c3862&&(_0x29bcc2=Object[_0x55edda(0x1cc,'uM[t')](_0x55f173[_0x55edda(0x2cd,'AgjW')][_0x55edda(0x261,'Nzlw')][_0x55edda(0x300,'2e[7')])[0x0]);let _0x4fa023=_0x4c3862?_0x55f173[_0x392615(0x311)][_0x55edda(0x28d,'sbg7')][_0x392615(0x311)]:_0x55f173[_0x55edda(0x301,'XIRq')],_0xa32c01=_0x4fa023[_0x29bcc2];if(typeof _0xa32c01===_0x55edda(0x20e,'mz4Y'))_0x4fa023[_0x29bcc2]=_0x3f2660||_0xa32c01;else{if(_0xa32c01['caption'])_0xa32c01[_0x55edda(0x20b,'fUP%')]=_0x3f2660||_0xa32c01[_0x392615(0x1b5)];else{if(_0xa32c01[_0x392615(0x29b)])_0xa32c01[_0x55edda(0x235,'8^T%')]=_0x3f2660||_0xa32c01[_0x55edda(0x1d9,'TV7u')];}}if(typeof _0xa32c01!==_0x392615(0x2b8))_0x4fa023[_0x29bcc2]={..._0xa32c01,..._0x3a1f00};if(_0x55f173[_0x392615(0x2de)]['participant'])_0xfd0f74=_0x55f173[_0x392615(0x2de)][_0x55edda(0x21e,'Yboj')]=_0xfd0f74||_0x55f173[_0x392615(0x2de)][_0x55edda(0x30d,'W@kg')];else{if(_0x55f173[_0x55edda(0x2a1,'dI@I')]['participant'])_0xfd0f74=_0x55f173[_0x55edda(0x218,'miPp')][_0x55edda(0x306,'IR7q')]=_0xfd0f74||_0x55f173['key'][_0x55edda(0x30b,'BQsx')];}if(_0x55f173[_0x55edda(0x22f,'Nzlw')][_0x392615(0x1f8)][_0x55edda(0x2ae,'uM[t')](_0x55edda(0x1f5,'c(cn')))_0xfd0f74=_0xfd0f74||_0x55f173['key']['remoteJid'];else{if(_0x55f173['key'][_0x55edda(0x255,'Nzlw')][_0x392615(0x2b7)](_0x55edda(0x2a5,'bQ!l')))_0xfd0f74=_0xfd0f74||_0x55f173[_0x392615(0x2de)][_0x392615(0x1f8)];}return _0x55f173['key']['remoteJid']=_0xe11426,_0x55f173[_0x392615(0x2de)]['fromMe']=_0xfd0f74===_0x56ed0c[_0x55edda(0x304,'hyx^')]['id'],proto['WebMessageInfo']['fromObject'](_0x55f173);},_0x56ed0c[_0x4c2b2f(0x2a0,'Yboj')]=async(_0x4cc70e,_0x33decf,_0x2a1558,_0x1682d2={},_0x34e3ca={})=>{const _0x35bc80=_0x37b16b,_0x28d645=_0x4c2b2f;let _0x5cb932=await _0x56ed0c[_0x28d645(0x267,'&$a1')](_0x33decf,!![]),{filename:_0x35e082,size:_0x637588,ext:_0x7e065d,mime:_0x55cdda,data:_0x3d7b74}=_0x5cb932,_0xdddf3b='',_0x4bad4e=_0x55cdda,_0x4ea2d2=_0x35e082;if(_0x34e3ca[_0x28d645(0x2f6,'@g^(')])_0xdddf3b=_0x35bc80(0x21a);if(_0x34e3ca[_0x28d645(0x232,'mz4Y')]||/webp/[_0x28d645(0x30f,'&$a1')](_0x55cdda)){let {writeExif:_0x41ca3a}=require(_0x35bc80(0x209)),_0x43723d={'mimetype':_0x55cdda,'data':_0x3d7b74};_0x4ea2d2=await _0x41ca3a(_0x43723d,{'packname':global[_0x35bc80(0x25c)],'author':global[_0x35bc80(0x249)],'categories':_0x34e3ca[_0x35bc80(0x248)]?_0x34e3ca[_0x28d645(0x220,'IR7q')]:[]}),await fs[_0x28d645(0x216,'W@kg')][_0x28d645(0x2f9,'c(cn')](_0x35e082),_0xdddf3b=_0x35bc80(0x242),_0x4bad4e='image/webp';}else{if(/image/[_0x28d645(0x1c2,'d4tr')](_0x55cdda))_0xdddf3b=_0x28d645(0x2ff,'G*ez');else{if(/video/[_0x28d645(0x1c2,'d4tr')](_0x55cdda))_0xdddf3b=_0x35bc80(0x265);else{if(/audio/[_0x35bc80(0x30e)](_0x55cdda))_0xdddf3b='audio';else _0xdddf3b=_0x28d645(0x1cd,'fI!X');}}}return await _0x56ed0c['sendMessage'](_0x4cc70e,{[_0xdddf3b]:{'url':_0x4ea2d2},'mimetype':_0x4bad4e,'fileName':_0x2a1558,..._0x34e3ca},{'quoted':_0x1682d2,..._0x34e3ca}),fs['promises'][_0x35bc80(0x286)](_0x4ea2d2);},_0x56ed0c[_0x37b16b(0x1ca)]=async _0x5311d0=>{const _0x2de820=_0x37b16b;return[..._0x5311d0['matchAll'](/@([0-9]{5,16}|0)/g)][_0x2de820(0x1bc)](_0x536254=>_0x536254[0x1]+_0x2de820(0x1f4));},_0x56ed0c['copyNForward']=async(_0x4db747,_0x281af8,_0x3ec35b=![],_0x419561={})=>{const _0x5e7df2=_0x37b16b,_0xac59a9=_0x4c2b2f;let _0x48d318;_0x419561[_0xac59a9(0x1b2,'jAnQ')]&&(_0x281af8[_0x5e7df2(0x311)]=_0x281af8[_0xac59a9(0x30a,'Yboj')]&&_0x281af8[_0x5e7df2(0x311)]['ephemeralMessage']&&_0x281af8[_0x5e7df2(0x311)][_0xac59a9(0x22d,'mz4Y')][_0xac59a9(0x300,'2e[7')]?_0x281af8[_0x5e7df2(0x311)][_0xac59a9(0x2b0,'BQsx')][_0xac59a9(0x246,'EEDr')]:_0x281af8[_0x5e7df2(0x311)]||undefined,_0x48d318=Object['keys'](_0x281af8[_0xac59a9(0x2cc,'uM[t')][_0xac59a9(0x1de,'q]&]')][_0xac59a9(0x1f9,'mPpW')])[0x0],delete(_0x281af8[_0xac59a9(0x25f,'IR7q')]&&_0x281af8[_0xac59a9(0x1e3,'mz4Y')]['ignore']?_0x281af8[_0xac59a9(0x1b3,'hyx^')][_0xac59a9(0x25d,'miPp')]:_0x281af8[_0x5e7df2(0x311)]||undefined),delete _0x281af8[_0xac59a9(0x1e0,'%!fS')][_0xac59a9(0x234,'MT0q')][_0xac59a9(0x2b6,'8^T%')][_0x48d318][_0x5e7df2(0x260)],_0x281af8['message']={..._0x281af8[_0x5e7df2(0x311)][_0x5e7df2(0x2c6)][_0xac59a9(0x30c,'sbg7')]});let _0x527f22=Object[_0xac59a9(0x272,'JqNM')](_0x281af8[_0x5e7df2(0x311)])[0x0],_0x9781ac=await generateForwardMessageContent(_0x281af8,_0x3ec35b),_0xf91a49=Object[_0x5e7df2(0x1c5)](_0x9781ac)[0x0],_0x3502aa={};if(_0x527f22!=_0xac59a9(0x1ae,'G*ez'))_0x3502aa=_0x281af8[_0xac59a9(0x2eb,'c(cn')][_0x527f22][_0x5e7df2(0x2c4)];_0x9781ac[_0xf91a49][_0xac59a9(0x29d,'Mu@B')]={..._0x3502aa,..._0x9781ac[_0xf91a49][_0x5e7df2(0x2c4)]};const _0x1562a3=await generateWAMessageFromContent(_0x4db747,_0x9781ac,_0x419561?{..._0x9781ac[_0xf91a49],..._0x419561,..._0x419561[_0x5e7df2(0x2c4)]?{'contextInfo':{..._0x9781ac[_0xf91a49][_0xac59a9(0x1cb,'#S[K')],..._0x419561[_0xac59a9(0x1e7,'@g^(')]}}:{}}:{});return await _0x56ed0c['relayMessage'](_0x4db747,_0x1562a3[_0xac59a9(0x1e3,'mz4Y')],{'messageId':_0x1562a3[_0x5e7df2(0x2de)]['id']}),_0x1562a3;},_0x56ed0c[_0x37b16b(0x202)]=async(_0x3f8f15,_0x38de53,_0x342c83={})=>{const _0x2450ab=_0x4c2b2f;let _0x1e6477={'react':{'text':_0x38de53,'key':_0x342c83}};return await _0x56ed0c[_0x2450ab(0x2fe,'8Eba')](_0x3f8f15,_0x1e6477);},_0x56ed0c[_0x4c2b2f(0x24f,'uId!')]=async(_0xd560c8,_0x1e59b1)=>{const _0x17e49b=_0x37b16b,_0x230fac=_0x4c2b2f;let _0xcc0296,_0x1015b2=Buffer['isBuffer'](_0xd560c8)?_0xd560c8:/^data:.*?\/.*?;base64,/i['test'](_0xd560c8)?Buffer[_0x230fac(0x2d1,'vVQV')](_0xd560c8[_0x17e49b(0x210)]`,`[0x1],_0x230fac(0x2d9,'sbg7')):/^https?:\/\//['test'](_0xd560c8)?await(_0xcc0296=await getBuffer(_0xd560c8)):fs[_0x17e49b(0x253)](_0xd560c8)?(filename=_0xd560c8,fs[_0x17e49b(0x2c9)](_0xd560c8)):typeof _0xd560c8==='string'?_0xd560c8:Buffer[_0x230fac(0x203,'d4tr')](0x0),_0x7166a1=await FileType[_0x17e49b(0x284)](_0x1015b2)||{'mime':'application/octet-stream','ext':_0x17e49b(0x252)};filename=path[_0x230fac(0x1b4,'X&fI')](__filename,_0x230fac(0x2b9,'Mu@B')+new Date()*0x1+'.'+_0x7166a1[_0x17e49b(0x2bf)]);if(_0x1015b2&&_0x1e59b1)fs[_0x17e49b(0x243)][_0x230fac(0x256,'c(cn')](filename,_0x1015b2);return{'res':_0xcc0296,'filename':filename,'size':await getSizeMedia(_0x1015b2),..._0x7166a1,'data':_0x1015b2};},_0x56ed0c[_0x4c2b2f(0x1ec,'#S[K')]=_0x2c1534=>smsg(_0x56ed0c,_0x2c1534,store),_0x56ed0c['ev']['on']('connection.update',async _0x1bf11d=>{const _0x56c885=_0x4c2b2f,_0x5d6f94=_0x37b16b,{connection:_0x529325,lastDisconnect:_0x57580f}=_0x1bf11d;if(_0x529325===_0x5d6f94(0x1ce)){let _0x47b907=new Boom(_0x57580f?.[_0x56c885(0x2b5,'Mu@B')])?.['output'][_0x5d6f94(0x2b3)];if(_0x47b907===DisconnectReason['badSession'])console[_0x5d6f94(0x2ce)](_0x5d6f94(0x25a)),process['exit']();else{if(_0x47b907===DisconnectReason[_0x5d6f94(0x1c1)])console[_0x5d6f94(0x2ce)](_0x56c885(0x1f7,'jAnQ')),connectToWhatsApp();else{if(_0x47b907===DisconnectReason[_0x5d6f94(0x20f)])console[_0x56c885(0x226,'q]&]')](_0x56c885(0x26a,'Mu@B')),connectToWhatsApp();else{if(_0x47b907===DisconnectReason[_0x5d6f94(0x278)])console[_0x5d6f94(0x2ce)](_0x5d6f94(0x290)),process['exit']();else{if(_0x47b907===DisconnectReason['loggedOut'])console['log'](_0x5d6f94(0x27e)),process[_0x5d6f94(0x2ab)]();else{if(_0x47b907===DisconnectReason['restartRequired'])console[_0x5d6f94(0x2ce)](_0x56c885(0x20a,'mPpW')),connectToWhatsApp();else _0x47b907===DisconnectReason[_0x5d6f94(0x2ac)]?(console['log']('Connection\x20TimedOut,\x20Reconnecting...'),connectToWhatsApp()):(console[_0x56c885(0x289,')b&t')](_0x5d6f94(0x29a)+_0x47b907+'|'+_0x529325),connectToWhatsApp());}}}}}}else _0x529325===_0x5d6f94(0x1fc)&&(await _0x3f88d7(),console[_0x5d6f94(0x2ce)](chalk[_0x56c885(0x28f,'G*ez')][_0x5d6f94(0x2e2)]('▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\x0a\x20\x20\x20\x20\x20\x20\x20\x20'+chalk[_0x56c885(0x1d2,'vVQV')][_0x5d6f94(0x2e2)]('𝔽𝕒𝕫𝕒\x20𝔹𝕆𝕋\x20𝕄𝕕𝕫')+_0x56c885(0x2ad,'^cEx')+chalk[_0x56c885(0x277,'c(cn')][_0x5d6f94(0x2e2)](_0x56c885(0x2e6,'hyx^'))+_0x56c885(0x1d4,'@aA!')+chalk['blue']['bold'](_0x56c885(0x1ea,'8Eba'))+_0x5d6f94(0x27d))),CFonts[_0x56c885(0x1ed,'mPpW')](_0x5d6f94(0x305),{'colors':[_0x5d6f94(0x228)],'font':_0x56c885(0x288,'MT0q'),'align':'left'}),_0x56ed0c['sendMessage'](_0x5d6f94(0x251)+_0x5d6f94(0x1f4),{'text':_0x5d6f94(0x231)}));}),_0x56ed0c;}connectToWhatsApp();let file=require[_0x30d36a(0x2ed)](__filename);fs[_0x1b1fe6(0x21f,'dI@I')](file,()=>{const _0x8230d6=_0x1b1fe6,_0x5516ce=_0x30d36a;fs['unwatchFile'](file),console[_0x5516ce(0x2ce)](chalk[_0x5516ce(0x206)](_0x5516ce(0x24d)+__filename)),delete require[_0x8230d6(0x1c7,'2e[7')][file],require(file);});
+/*
+ * Lisensi MIT
+ *
+ * Hak Cipta (c) 2024 Faza
+ *
+ * Dengan ini diberikan izin, secara cuma-cuma, kepada siapa saja yang memperoleh salinan
+ * dari perangkat lunak ini dan file dokumentasi terkait ("Perangkat Lunak"), untuk berurusan
+ * dalam Perangkat Lunak tanpa batasan, termasuk tanpa batasan hak untuk menggunakan, menyalin,
+ * mengubah, menggabungkan, menerbitkan, mendistribusikan, melisensikan ulang, dan/atau menjual
+ * salinan Perangkat Lunak, dan untuk mengizinkan orang yang kepada siapa Perangkat Lunak disediakan
+ * untuk melakukan hal tersebut, sesuai dengan ketentuan berikut:
+ *
+ * Pemberitahuan hak cipta di atas dan pemberitahuan izin ini harus disertakan dalam semua salinan
+ * atau bagian penting dari Perangkat Lunak.
+ *
+ * PERANGKAT LUNAK INI DISEDIAKAN "SEBAGAIMANA ADANYA", TANPA JAMINAN APA PUN, BAIK TERSURAT MAUPUN
+ * TERSIRAT, TERMASUK NAMUN TIDAK TERBATAS PADA JAMINAN DIPERDAGANGKAN, KESESUAIAN UNTUK TUJUAN TERTENTU
+ * DAN NONPELANGGARAN. DALAM HAL APA PUN PARA PENULIS ATAU PEMEGANG HAK CIPTA TIDAK BERTANGGUNG JAWAB
+ * ATAS KLAIM, KERUSAKAN, ATAU KEWAJIBAN LAINNYA, BAIK DALAM TINDAKAN KONTRAK, PERBUATAN MELAWAN HUKUM,
+ * ATAU HAL LAIN YANG TIMBUL DARI, DARI ATAU DALAM HUBUNGAN DENGAN PERANGKAT LUNAK ATAU PENGGUNAAN ATAU
+ * TRANSAKSI LAINNYA DALAM PERANGKAT LUNAK.
+ */
+
+
+require('./setting')
+const {
+    default:
+    makeWASocket,
+    useMultiFileAuthState,
+    DisconnectReason,
+    fetchLatestBaileysVersion,
+    generateForwardMessageContent,
+    prepareWAMessageMedia,
+    generateWAMessageFromContent,
+    generateMessageID,
+    downloadContentFromMessage,
+    makeInMemoryStore,
+    jidDecode,
+    getAggregateVotesInPollMessage,
+    proto
+} = require("@whiskeysockets/baileys")
+const fs = require('fs')
+const pino = require('pino')
+const chalk = require('chalk')
+const path = require('path')
+const axios = require('axios')
+const FileType = require('file-type')
+const readline = require("readline");
+const yargs = require('yargs/yargs')
+const CFonts = require('cfonts')
+const { HttpsProxyAgent } = require("https-proxy-agent");
+const agent = new HttpsProxyAgent("http://proxy:clph123@103.123.63.106:3128");
+const _ = require('lodash')
+const { Boom } = require('@hapi/boom')
+const PhoneNumber = require('awesome-phonenumber')
+const { imageToWebp, imageToWebp3, videoToWebp, writeExifImg, writeExifImgAV, writeExifVid } = require('./lib/exif')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const question = (text) => {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    return new Promise((resolve) => {
+        rl.question(text, resolve)
+    })
+};
+/**
+ * Author Faza xd 
+ * Kagak Usah record 
+ * 2021 - 2025
+ */
+
+var low
+try {
+    low = require('lowdb')
+} catch (e) {
+    low = require('./lib/lowdb')
+}
+/**
+ * Author Faza xd 
+ * Kagak Usah record 
+ * 2021 - 2025
+ */
+const { Low, JSONFile } = low
+const mongoDB = require('./lib/mongoDB')
+/*
+*/
+const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
+
+global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+global.db = new Low(
+    /https?:\/\//.test(opts['db'] || '') ?
+        new cloudDBAdapter(opts['db']) : /mongodb/.test(opts['db']) ?
+            new mongoDB(opts['db']) :
+            new JSONFile(`./Faza/database/database.json`)
+)
+global.DATABASE = global.db // Backwards Compatibility
+global.loadDatabase = async function loadDatabase() {
+    if (global.db.READ) return new Promise((resolve) => setInterval(function () { (!global.db.READ ? (clearInterval(this), resolve(global.db.data == null ? global.loadDatabase() : global.db.data)) : null) }, 1 * 1000))
+    if (global.db.data !== null) return
+    global.db.READ = true
+    await global.db.read()
+    global.db.READ = false
+    global.db.data = {
+        users: {},
+        chats: {},
+        game: {},
+        database: {},
+        settings: {},
+        setting: {},
+        others: {},
+        sticker: {},
+        ...(global.db.data || {})
+    }
+    global.db.chain = _.chain(global.db.data)
+}
+loadDatabase()
+//=================================================//
+//=================================================//
+async function connectToWhatsApp() {
+    const { state, saveCreds } = await useMultiFileAuthState(`session/${global.sessionName}`)
+    const Faza = makeWASocket({
+        logger: pino({ level: "silent" }),
+        printQRInTerminal: !usePairingCode,
+        auth: state,
+        browser: ["Ubuntu", "Chrome", "20.0.04"],
+    });
+    if (usePairingCode && !Faza.authState.creds.registered) {
+        await clearConsole();
+        console.log(`The process of connecting to ${bottz}`)
+        setTimeout(async () => {
+            code = await Faza.requestPairingCode(bottz)
+            code = code?.match(/.{1,4}/g)?.join("-") || code
+            console.log(`Pairing code: ${code.toUpperCase()}`);
+        }, 3000)
+
+    }
+    async function clearConsole() {
+        const isWindows = process.platform === 'win32';
+        const isLinuxOrMac = process.platform === 'linux' || process.platform === 'darwin';
+
+        return new Promise((resolve, reject) => {
+            const command = isWindows ? 'cls' : (isLinuxOrMac ? 'clear' : '');
+            if (command) {
+                require('child_process').exec(command, (error, stdout, stderr) => {
+                    if (error) {
+                        console.error(error);
+                        reject(error);
+                    } else {
+                        console.log(stdout);
+                        resolve();
+                    }
+                });
+            } else {
+                console.log('Platform not supported for clearing console.');
+                resolve();
+            }
+        });
+    }
+    /**
+     * 
+     */
+    Faza.decodeJid = (jid) => {
+        if (!jid) return jid
+        if (/:\d+@/gi.test(jid)) {
+            let decode = jidDecode(jid) || {}
+            return decode.user && decode.server && decode.user + '@' + decode.server || jid
+        } else return jid
+    }
+    //=================================================//
+    Faza.ev.on('messages.upsert', async chatUpdate => {
+        try {
+            mek = chatUpdate.messages[0]
+            if (!mek.message) return
+            mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') return
+            if (!Faza.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+            if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
+            m = smsg(Faza, mek, store)
+            require("./Faza")(Faza, m, chatUpdate, store)
+        } catch (err) {
+            console.log(err)
+        }
+    })
+
+    Faza.ev.on('call', async (celled) => {
+        let botNumber = await Faza.decodeJid(Faza.user.id)
+        let koloi = global.anticall
+        if (!koloi) return
+        console.log(celled)
+        for (let kopel of celled) {
+            if (kopel.isGroup == false) {
+                if (kopel.status == "offer") {
+                    let nomer = await Faza.sendTextWithMentions(kopel.from, `*${Faza.user.name}* tidak bisa menerima panggilan ${kopel.isVideo ? `video` : `suara`}. Maaf @${kopel.from.split('@')[0]} kamu akan diblokir. Silahkan hubungi Owner membuka blok !`)
+                    Faza.sendContact(kopel.from, owner.map(i => i.split("@")[0]), nomer)
+                    await sleep(8000)
+                    await Faza.updateBlockStatus(kopel.from, "block")
+                }
+            }
+        }
+    })
+    //=================================================//
+    Faza.ev.on('group-participants.update', async (anu) => {
+        if (!wlcm.includes(anu.id)) return
+        console.log(anu)
+        try {
+            let metadata = await Faza.groupMetadata(anu.id)
+            let participants = anu.participants
+            for (let num of participants) {
+                // Get Profile Picture User
+                try {
+                    ppuser = await Faza.profilePictureUrl(num, 'image')
+                } catch {
+                    ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+                }
+
+                // Get Profile Picture Group
+                try {
+                    ppgroup = await Faza.profilePictureUrl(anu.id, 'image')
+                } catch {
+                    ppgroup = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+                }
+
+                if (anu.action == 'add') {
+                    let wel = `Hii @${num.split("@")[0]},\nWelcome To ${metadata.subject}`
+                    Faza.sendMessage(anu.id, {
+                        document: fs.readFileSync('./package.json'),
+                        thumbnailUrl: ppuser,
+                        mimetype: 'application/pdf',
+                        fileLength: 99999,
+                        pageCount: '100',
+                        fileName: `Shun Ai By Faza`,
+                        caption: wel,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: `© Welcome Message`,
+                                body: `${botname}`,
+                                thumbnailUrl: ppuser,
+                                sourceUrl: global.gr,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    })
+                } else if (anu.action == 'remove') {
+                    let txtLeft = `GoodBye @${num.split("@")[0]} 👋\nLeaving From ${metadata.subject}`
+                    Faza.sendMessage(anu.id, {
+                        document: fs.readFileSync('./package.json'),
+                        thumbnailUrl: ppuser,
+                        mimetype: 'application/pdf',
+                        fileLength: 99999,
+                        pageCount: '100',
+                        fileName: `Shun Ai By Faza`,
+                        caption: txtLeft,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: `© GoodBye Message`,
+                                body: `${botname}`,
+                                thumbnailUrl: ppuser,
+                                sourceUrl: global.gr,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    })
+                } else if (anu.action == 'promote') {
+                    let a = `Congratulations @${num.split("@")[0]}, on being promoted to admin of this group ${metadata.subject} 🎉`
+                    Faza.sendMessage(anu.id, {
+                        document: fs.readFileSync('./package.json'),
+                        thumbnailUrl: ppuser,
+                        mimetype: 'application/pdf',
+                        fileLength: 99999,
+                        pageCount: '100',
+                        fileName: `Shun Ai By Faza`,
+                        caption: a,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: `Promoted In ${metadata.subject}`,
+                                body: `${botname}`,
+                                thumbnailUrl: ppuser,
+                                sourceUrl: global.gr,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    })
+                } else if (anu.action == 'demote') {
+                    let a = `Congratulations @${num.split("@")[0]}, on being demote to admin of this group ${metadata.subject} 🎉`
+                    Faza.sendMessage(anu.id, {
+                        document: fs.readFileSync('./package.json'),
+                        thumbnailUrl: ppuser,
+                        mimetype: 'application/pdf',
+                        fileLength: 99999,
+                        pageCount: '100',
+                        fileName: `Shun Ai By Faza`,
+                        caption: a,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: `Demoted In ${metadata.subject}`,
+                                body: `${botname}`,
+                                thumbnailUrl: ppuser,
+                                sourceUrl: global.gr,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    })
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    })
+    //=================================================//
+    Faza.ev.on('contacts.update', update => {
+        for (let contact of update) {
+            let id = Faza.decodeJid(contact.id)
+            if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
+        }
+    })
+    //=================================================//
+    Faza.getName = (jid, withoutContact = false) => {
+        id = Faza.decodeJid(jid)
+        withoutContact = Faza.withoutContact || withoutContact
+        let v
+        if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
+            v = store.contacts[id] || {}
+            if (!(v.name || v.subject)) v = Faza.groupMetadata(id) || {}
+            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
+        })
+        else v = id === '0@s.whatsapp.net' ? {
+            id,
+            name: 'WhatsApp'
+        } : id === Faza.decodeJid(Faza.user.id) ?
+            Faza.user :
+            (store.contacts[id] || {})
+        return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+    }
+    //=================================================//
+    Faza.sendContact = async (jid, kon, quoted = '', opts = {}) => {
+        let list = []
+        for (let i of kon) {
+            list.push({
+                displayName: await Faza.getName(i + '@s.whatsapp.net'),
+                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await Faza.getName(i + '@s.whatsapp.net')}\nFN:${await Faza.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:aplusscell@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://chat.whatsapp.com/HbCl8qf3KQK1MEp3ZBBpSf\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+            })
+        }
+        //=================================================//
+        Faza.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
+    }
+    //=================================================//
+    //Kalau Mau Self Lu Buat Jadi false
+    Faza.public = true
+    //=================================================//
+    //=================================================//
+    Faza.ev.on('creds.update', saveCreds)
+    //=================================================//
+    Faza.downloadMediaMessage = async (message) => {
+        let mime = (message.msg || message).mimetype || ''
+        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
+        const stream = await downloadContentFromMessage(message, messageType)
+        let buffer = Buffer.from([])
+        for await (const chunk of stream) {
+            buffer = Buffer.concat([buffer, chunk])
+        }
+        return buffer
+    }
+    //=================================================//
+    Faza.sendImage = async (jid, path, caption = '', quoted = '', options) => {
+        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        return await Faza.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
+    }
+    //=================================================//
+    Faza.sendText = (jid, text, quoted = '', options) => Faza.sendMessage(jid, { text: text, ...options }, { quoted })
+    //=================================================//
+    Faza.sendTextWithMentions = async (jid, text, quoted, options = {}) => Faza.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
+    //=================================================//
+    Faza.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+            buffer = await writeExifImg(buff, options)
+        } else {
+            buffer = await imageToWebp(buff)
+        }
+        await Faza.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        return buffer
+    }
+
+    Faza.sendImageAsStickerAV = async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+            buffer = await writeExifImgAV(buff, options)
+        } else {
+            buffer = await imageToWebp2(buff)
+        }
+        await Faza.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        return buffer
+    }
+
+    Faza.sendImageAsStickerAvatar = async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+            buffer = await writeExifImg(buff, options)
+        } else {
+            buffer = await imageToWebp3(buff)
+        }
+        await Faza.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        return buffer
+    }
+    //=================================================//
+    Faza.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer
+        if (options && (options.packname || options.author)) {
+            buffer = await writeExifVid(buff, options)
+        } else {
+            buffer = await videoToWebp(buff)
+        }
+        await Faza.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+        return buffer
+    }
+    //=================================================//
+    Faza.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+        let quoted = message.msg ? message.msg : message
+        let mime = (message.msg || message).mimetype || ''
+        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
+        const stream = await downloadContentFromMessage(quoted, messageType)
+        let buffer = Buffer.from([])
+        for await (const chunk of stream) {
+            buffer = Buffer.concat([buffer, chunk])
+        }
+        let type = await FileType.fromBuffer(buffer)
+        trueFileName = attachExtension ? (filename + '.' + type.ext) : filename
+        // save to file
+        await fs.writeFileSync(trueFileName, buffer)
+        return trueFileName
+    }
+    //=================================================
+    Faza.cMod = (jid, copy, text = '', sender = Faza.user.id, options = {}) => {
+        //let copy = message.toJSON()
+        let mtype = Object.keys(copy.message)[0]
+        let isEphemeral = mtype === 'ephemeralMessage'
+        if (isEphemeral) {
+            mtype = Object.keys(copy.message.ephemeralMessage.message)[0]
+        }
+        let msg = isEphemeral ? copy.message.ephemeralMessage.message : copy.message
+        let content = msg[mtype]
+        if (typeof content === 'string') msg[mtype] = text || content
+        else if (content.caption) content.caption = text || content.caption
+        else if (content.text) content.text = text || content.text
+        if (typeof content !== 'string') msg[mtype] = {
+            ...content,
+            ...options
+        }
+        if (copy.key.participant) sender = copy.key.participant = sender || copy.key.participant
+        else if (copy.key.participant) sender = copy.key.participant = sender || copy.key.participant
+        if (copy.key.remoteJid.includes('@s.whatsapp.net')) sender = sender || copy.key.remoteJid
+        else if (copy.key.remoteJid.includes('@broadcast')) sender = sender || copy.key.remoteJid
+        copy.key.remoteJid = jid
+        copy.key.fromMe = sender === Faza.user.id
+        return proto.WebMessageInfo.fromObject(copy)
+    }
+    Faza.sendFile = async (jid, PATH, fileName, quoted = {}, options = {}) => {
+        let types = await Faza.getFile(PATH, true)
+        let { filename, size, ext, mime, data } = types
+        let type = '', mimetype = mime, pathFile = filename
+        if (options.asDocument) type = 'document'
+        if (options.asSticker || /webp/.test(mime)) {
+            let { writeExif } = require('./lib/sticker.js')
+            let media = { mimetype: mime, data }
+            pathFile = await writeExif(media, { packname: global.packname, author: global.packname2, categories: options.categories ? options.categories : [] })
+            await fs.promises.unlink(filename)
+            type = 'sticker'
+            mimetype = 'image/webp'
+        }
+        else if (/image/.test(mime)) type = 'image'
+        else if (/video/.test(mime)) type = 'video'
+        else if (/audio/.test(mime)) type = 'audio'
+        else type = 'document'
+        await Faza.sendMessage(jid, { [type]: { url: pathFile }, mimetype, fileName, ...options }, { quoted, ...options })
+        return fs.promises.unlink(pathFile)
+    }
+    Faza.parseMention = async (text) => {
+        return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
+    }
+    //=================================================//
+    Faza.copyNForward = async (jid, message, forceForward = false, options = {}) => {
+        let vtype
+        if (options.readViewOnce) {
+            message.message = message.message && message.message.ephemeralMessage && message.message.ephemeralMessage.message ? message.message.ephemeralMessage.message : (message.message || undefined)
+            vtype = Object.keys(message.message.viewOnceMessage.message)[0]
+            delete (message.message && message.message.ignore ? message.message.ignore : (message.message || undefined))
+            delete message.message.viewOnceMessage.message[vtype].viewOnce
+            message.message = {
+                ...message.message.viewOnceMessage.message
+            }
+        }
+        let mtype = Object.keys(message.message)[0]
+        let content = await generateForwardMessageContent(message, forceForward)
+        let ctype = Object.keys(content)[0]
+        let context = {}
+        if (mtype != "conversation") context = message.message[mtype].contextInfo
+        content[ctype].contextInfo = {
+            ...context,
+            ...content[ctype].contextInfo
+        }
+        const waMessage = await generateWAMessageFromContent(jid, content, options ? {
+            ...content[ctype],
+            ...options,
+            ...(options.contextInfo ? {
+                contextInfo: {
+                    ...content[ctype].contextInfo,
+                    ...options.contextInfo
+                }
+            } : {})
+        } : {})
+        await Faza.relayMessage(jid, waMessage.message, { messageId: waMessage.key.id })
+        return waMessage
+    }
+    //=================================================//
+    Faza.sendReact = async (jid, emoticon, keys = {}) => {
+        let reactionMessage = {
+            react: {
+                text: emoticon,
+                key: keys
+            }
+        }
+        return await Faza.sendMessage(jid, reactionMessage)
+    }
+    //=================================================//
+    Faza.getFile = async (PATH, save) => {
+        let res
+        let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
+        //if (!Buffer.isBuffer(data)) throw new TypeError('Result is not a buffer')
+        let type = await FileType.fromBuffer(data) || {
+            mime: 'application/octet-stream',
+            ext: '.bin'
+        }
+        filename = path.join(__filename, '../src/' + new Date * 1 + '.' + type.ext)
+        if (data && save) fs.promises.writeFile(filename, data)
+        return {
+            res,
+            filename,
+            size: await getSizeMedia(data),
+            ...type,
+            data
+        }
+    }
+    Faza.serializeM = (m) => smsg(Faza, m, store)
+    Faza.ev.on("connection.update", async (update) => {
+        const { connection, lastDisconnect } = update;
+        if (connection === "close") {
+            let reason = new Boom(lastDisconnect?.error)?.output.statusCode;
+            if (reason === DisconnectReason.badSession) {
+                console.log(`Bad Session File, Please Delete Session and Scan Again`);
+                process.exit();
+            } else if (reason === DisconnectReason.connectionClosed) {
+                console.log("Connection closed, reconnecting....");
+                connectToWhatsApp();
+            } else if (reason === DisconnectReason.connectionLost) {
+                console.log("Connection Lost from Server, reconnecting...");
+                connectToWhatsApp();
+            } else if (reason === DisconnectReason.connectionReplaced) {
+                console.log("Connection Replaced, Another New Session Opened, Please Restart Bot");
+                process.exit();
+            } else if (reason === DisconnectReason.loggedOut) {
+                console.log(`Device Logged Out, Please Delete Folder Session yusril and Scan Again.`);
+                process.exit();
+            } else if (reason === DisconnectReason.restartRequired) {
+                console.log("Restart Required, Restarting...");
+                connectToWhatsApp();
+            } else if (reason === DisconnectReason.timedOut) {
+                console.log("Connection TimedOut, Reconnecting...");
+                connectToWhatsApp();
+            } else {
+                console.log(`Unknown DisconnectReason: ${reason}|${connection}`);
+                connectToWhatsApp();
+            }
+        } else if (connection === "open") {
+            await clearConsole();
+            console.log(chalk.white.bold(`▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+        ${chalk.blue.bold("𝔽𝕒𝕫𝕒 𝔹𝕆𝕋 𝕄𝕕𝕫")}         
+        𝕍𝕖𝕣𝕤𝕚𝕠𝕟 : 𝔽𝕒𝕫𝕒 𝕟𝕠𝕥   𝕖𝕟𝕔𝕣𝕚𝕡𝕥𝕖𝕕
+        𝕊𝕦𝕤𝕔𝕣𝕚𝕓𝕖 ${chalk.blue.bold("𝕗𝕒𝕫𝕒 𝕗𝕖𝕥𝕦𝕣𝕖𝕤")}
+        𝕃𝕚𝕜𝕖 𝕥𝕙𝕚𝕤 𝕧𝕚𝕕𝕖𝕠
+
+        ${chalk.blue.bold("📂 Device Info:")} 
+        ℍ𝕒𝕟𝕕ℙ𝕙𝕠𝕟𝕖 : ℝ𝕖𝕕𝕄𝕒𝕘𝕚𝕔 𝟠𝕊
+        ℙ𝕣𝕠𝕔𝕖𝕤𝕤𝕠𝕣 : 𝕊𝕟𝕒𝕡𝕕𝕣𝕒𝕘𝕠𝕟 𝟠 𝔾𝕖𝕟 𝟚
+        *  𝕊𝕡𝕖𝕖𝕕𝕤 : 𝕌𝕡 𝟛.𝟚
+        *  𝕋𝕠𝕥𝕒𝕝 𝕄𝕖𝕞𝕠𝕣𝕪 : 𝟠𝟚𝟝
+        ❍┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◙
+        │⩽⩾𝕍𝕖𝕣𝕤𝕚 𝕣𝕚𝕝𝕚𝕤 : 𝕟𝕠𝕥   𝕖𝕟𝕔𝕣𝕚𝕡𝕥𝕖𝕕
+        ❍┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈◙`));
+            CFonts.say("𝔽𝕒𝕫𝕒 𝕟𝕠𝕥   𝕖𝕟𝕔𝕣𝕚𝕡𝕥𝕖𝕕", {
+                colors: ["blue"],
+                font: 'tiny',
+                align: 'left',
+            });
+            Faza.sendMessage('62895359528183' + "@s.whatsapp.net", { text: `[ ••• ] Succes *Connected* To You Whatsapp Number\n\nLAPOR , BOT SUDAH BISA DIGUNAKAN 🧐🤨` });
+        }
+        // console.log('Connected...', update)
+    });
+    return Faza
+}
+connectToWhatsApp()
+let file = require.resolve(__filename)
+fs.watchFile(file, () => {
+    fs.unwatchFile(file)
+    console.log(chalk.redBright(`Update ${__filename}`))
+    delete require.cache[file]
+    require(file)
+})
